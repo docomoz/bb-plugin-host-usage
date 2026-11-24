@@ -1,0 +1,47 @@
+{
+  "name": "bb-plugin-host-usage",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "app.tsx",
+    "local.ts",
+    "server.ts",
+    "snapshot.ts",
+    "assets",
+    "collector/collect.py",
+    "dist",
+    "skills",
+    "README.md",
+    "PLUGIN_OVERVIEW.md"
+  ],
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "engines": {
+    "bb": ">=0.50.1",
+    "bbPluginSdk": ">=0.6.157"
+  },
+  "bb": {
+    "name": "Host Usage",
+    "description": "See host resources, BB instances, and container health from the sidebar footer.",
+    "branding": {
+      "icon": "./assets/server.svg",
+      "experimental_icons": {
+        "rack": "./assets/server.svg",
+        "box": "./assets/container.svg"
+      }
+    },
+    "server": "./server.ts",
+    "app": "./app.tsx"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@get-bb/plugin-sdk": "0.6.157",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}
